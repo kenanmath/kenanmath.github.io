@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>12. Sınıf Matematik — İspatlar</title>
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+<style>
+  :root { --bg:#f7f8fa; --card:#ffffff; --ink:#1a1d23; --muted:#5b6470; --accent:#1f6feb; --line:#e3e7ee; }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; padding:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.6; -webkit-text-size-adjust:100%;
+  }
+  header {
+    background:linear-gradient(135deg,#1f6feb,#1248b8); color:#fff;
+    padding:28px 20px 22px; text-align:center;
+  }
+  header h1 { margin:0 0 4px; font-size:1.35rem; font-weight:700; }
+  header p { margin:0; opacity:.9; font-size:.9rem; }
+  main { max-width:760px; margin:0 auto; padding:18px 14px 60px; }
+  .toc {
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:14px 16px; margin-bottom:20px;
+  }
+  .toc h2 { font-size:.95rem; margin:0 0 8px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
+  .toc ol { margin:0; padding-left:1.2em; }
+  .toc li { margin:5px 0; }
+  .toc a { color:var(--accent); text-decoration:none; }
+  .card {
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:18px 18px 14px; margin-bottom:18px; scroll-margin-top:14px;
+    box-shadow:0 1px 3px rgba(20,30,50,.04);
+  }
+  .card .no { display:inline-block; background:var(--accent); color:#fff; font-size:.78rem;
+    font-weight:700; padding:2px 9px; border-radius:20px; margin-bottom:8px; }
+  .card h3 { margin:6px 0 12px; font-size:1.08rem; font-weight:700; line-height:1.4; }
+  .proof { font-size:1rem; }
+  .proof p { margin:.55em 0; }
+  .qed { text-align:right; color:var(--muted); font-weight:700; }
+  footer { text-align:center; color:var(--muted); font-size:.82rem; padding:10px 20px 30px; }
+  .overflow { overflow-x:auto; }
+</style>
+</head>
+<body>
+<header>
+  <h1>12. Sınıf Matematik — İspatlar</h1>
+  <p>Logaritma Özelliklerinin İspatları · QR ile erişim</p>
+</header>
+<main>
+
+  <nav class="toc">
+    <h2>İçindekiler</h2>
+    <ol>
+      <li><a href="#ispat-1">$\log_a b = c \Leftrightarrow b = a^c$</a></li>
+      <li><a href="#ispat-2">$\log_a 1 = 0$</a></li>
+      <li><a href="#ispat-3">$\log_a a = 1$</a></li>
+      <li><a href="#ispat-4">$\log_{a^n} b^m = \tfrac{m}{n}\log_a b$</a></li>
+      <li><a href="#ispat-5">$\log_a(xy) = \log_a x + \log_a y$</a></li>
+      <li><a href="#ispat-6">$\log_a\tfrac{x}{y} = \log_a x - \log_a y$</a></li>
+      <li><a href="#ispat-7">$a^{\log_b c} = c^{\log_b a}$</a></li>
+      <li><a href="#ispat-8">$\dfrac{\log_a x}{\log_a y} = \log_y x$</a></li>
+      <li><a href="#ispat-9">$\log_b a = \dfrac{1}{\log_a b}$</a></li>
+      <li><a href="#ispat-10">Zincir kuralı</a></li>
+    </ol>
+  </nav>
+
+  <section class="card" id="ispat-1">
+    <span class="no">İspat 1</span>
+    <h3>$\log_a b = c \;\Leftrightarrow\; b = a^{c}$</h3>
+    <div class="proof">
+      <p>$\log_a b = c$ eşitliğinin iki tarafını $a$ tabanına üst yapalım:</p>
+      <p>$$a^{\log_a b} = a^{c}.$$</p>
+      <p>Üstel ve logaritma fonksiyonları birbirinin tersi olduğundan $a^{\log_a b} = b$ özdeşliği geçerlidir. Bu sol tarafa uygulanırsa</p>
+      <p>$$b = a^{c}$$</p>
+      <p>elde edilir.</p>
+      <p class="qed">$\blacksquare$</p>
+    </div>
+  </section>
+
+  <section class="card" id="ispat-2">
+    <span class="no">İspat 2</span>
+    <h3>$\log_a 1 = 0$</h3>
+    <div class="proof">
+      <p>$\log_a 1 = k$ diyelim. İki tarafı $a$ tabanına üst yapalım:</p>
+      <p>$$a^{\log_a 1} = a^{k} \;\Rightarrow\; 1 = a^{k}.$$</p>
+      <p>$a>0$ ve $a\neq 1$ olduğundan $a^{k}=1$ eşitliği yalnızca $k=0$ için sağlanır ($a^{0}=1$). Dolayısıyla $\log_a 1 = 0$.</p>
+      <p class="qed">$\blacksquare$</p>
+    </div>
+  </section>
+
+  <section class="card" id="ispat-3">
+    <span class="no">İspat 3</span>
+    <h3>$\log_a a = 1$</h3>
+    <div class="proof">
+      <p>$\log_a a = k$ diyelim. İki tarafı $a$ tabanına üst yapalım:</p>
+      <p>$$a^{\log_a a} = a^{k} \;\Rightarrow\; a = a^{k}.$$</p>
+      <p>$a>0,\; a\neq 1$ için üstel fonksiyon birebirdir. $a^{1}=a$ olduğundan $k=1$ bulunur. Dolayısıyla $\log_a a = 1$.</p>
+      <p class="qed">$\blacksquare$</p>
+    </div>
+  </section>
+
+  <section class="card" id="ispat-4">
+    <span class="no">İspat 4</span>
+    <h3>$n\neq 0$ için $\;\log_{a^{n}} b^{m} = \dfrac{m}{n}\,\log_a b$</h3>
+    <div class="proof">
+      <p>$\log_{a^{n}} b^{m} = k$ diyelim. Logaritma tanımından</p>
+      <p>$$\left(a^{n}\right)^{k} = b^{m} \;\Rightarrow\; a^{nk} = b^{m}.$$</p>
+      <p>Diğer yandan $\log_a b = t$ dersek $a^{t}=b$, dolayısıyla $a^{mt}=b^{m}$. İki ifade birleştirilirse $a^{nk}=a^{mt}$ olur. Üstel fonksiyon birebir olduğundan</p>
+      <p>$$nk = mt \;\Rightarrow\; k = \frac{m}{n}\,t = \frac{m}{n}\,\log_a b.$$</p>
+      <p class="qed">$\blacksquare$</p>
+    </div>
+  </section>
+
+  <section class="card" id="ispat-5">
+    <span class="no">İspat 5</span>
+    <h3>$\log_a(xy) = \log_a x + \log_a y$</h3>
+    <div class="proof">
+      <p>$\log_a x = k$ ve $\log_a y = t$ diyelim. Tanımdan $x=a^{k}$ ve $y=a^{t}$. Aynı tabanlı üslülerin çarpımında üsler toplanır:</p>
+      <p>$$xy = a^{k}\,a^{t} = a^{k+t}.$$</p>
+      <p>Buradan</p>
+      <p>$$\log_a(xy) = \log_a a^{k+t} = (k+t)\log_a a = k+t = \log_a x + \log_a y.$$</p>
+      <p class="qed">$\blacksquare$</p>
+    </div>
+  </section>
+
+  <section class="card" id="ispat-6">
+    <span class="no">İspat 6</span>
+    <h3>$\log_a\dfrac{x}{y} = \log_a x - \log_a y$</h3>
+    <div class="proof">
+      <p>$\dfrac{x}{y} = x\,y^{-1}$ yazalım. Çarpım kuralı (İspat 5) uygulanırsa</p>
+      <p>$$\log_a\frac{x}{y} = \log_a\!\left(x\,y^{-1}\right) = \log_a x + \log_a y^{-1}.$$</p>
+      <p>Üs kuralından ($\log_a y^{m}=m\log_a y$, İspat 4'ün $n=1$ hali) $\log_a y^{-1} = -\log_a y$. Dolayısıyla</p>
+      <p>$$\log_a\frac{x}{y} = \log_a x - \log_a y.$$</p>
+      <p class="qed">$\blacksquare$</p>
+    </div>
+  </section>
+
+  <section class="card" id="ispat-7">
+    <span class="no">İspat 7</span>
+    <h3>$a^{\log_b c} = c^{\log_b a}$</h3>
+    <div class="proof">
+      <p>$k = a^{\log_b c}$ diyelim. İki tarafın $a$ tabanında logaritmasını alalım:</p>
+      <p>$$\log_a k = \log_a\!\left(a^{\log_b c}\right) = (\log_b c)(\log_a a) = \log_b c.$$</p>
+      <p>Taban değiştirme özelliğiyle (İspat 8) $\log_b c = \dfrac{\log_a c}{\log_a b}$ ve $\log_b a = \dfrac{\log_a a}{\log_a b} = \dfrac{1}{\log_a b}$. Bu iki ifade birleştirilirse</p>
+      <p>$$\log_a k = \log_a c \cdot \frac{1}{\log_a b} = \log_a c \cdot \log_b a = \log_a\!\left(c^{\log_b a}\right).$$</p>
+      <p>Üstel (ve dolayısıyla logaritma) fonksiyonu birebir olduğundan $\log_a k = \log_a\!\left(c^{\log_b a}\right)$ eşitliği $k = c^{\log_b a}$ verir. Sonuç olarak $a^{\log_b c} = c^{\log_b a}$.</p>
+      <p class="qed">$\blacksquare$</p>
+    </div>
+  </section>
+
+  <section class="card" id="ispat-8">
+    <span class="no">İspat 8</span>
+    <h3>$\dfrac{\log_a x}{\log_a y} = \log_y x \quad$ (taban değiştirme)</h3>
+    <div class="proof">
+      <p>$\dfrac{\log_a x}{\log_a y} = k$ diyelim. O halde</p>
+      <p>$$\log_a x = k\,\log_a y = \log_a y^{k}.$$</p>
+      <p>Logaritma fonksiyonu birebir olduğundan $x = y^{k}$. Logaritma tanımından $\log_y x = k$. Dolayısıyla</p>
+      <p>$$\frac{\log_a x}{\log_a y} = \log_y x.$$</p>
+      <p class="qed">$\blacksquare$</p>
+    </div>
+  </section>
+
+  <section class="card" id="ispat-9">
+    <span class="no">İspat 9</span>
+    <h3>$\log_b a = \dfrac{1}{\log_a b}$</h3>
+    <div class="proof">
+      <p>Taban değiştirme özelliğinde (İspat 8) $x=a,\; y=b$ alalım:</p>
+      <p>$$\frac{\log_a a}{\log_a b} = \log_b a \;\Rightarrow\; \frac{1}{\log_a b} = \log_b a.$$</p>
+      <p>Eşdeğer olarak $\log_a b \cdot \log_b a = 1$ yazılabilir.</p>
+      <p class="qed">$\blacksquare$</p>
+    </div>
+  </section>
+
+  <section class="card" id="ispat-10">
+    <span class="no">İspat 10</span>
+    <h3>$\left(\log_{a_1} a_2\right)\left(\log_{a_2} a_3\right)\cdots\left(\log_{a_{n-1}} a_n\right) = \log_{a_1} a_n$</h3>
+    <div class="proof">
+      <p>Her çarpanı ortak bir $k$ tabanına çevirelim (taban değiştirme): $\log_{a_i} a_{i+1} = \dfrac{\log_k a_{i+1}}{\log_k a_i}$. Çarpımı yazalım:</p>
+      <div class="overflow">
+      <p>$$\frac{\log_k a_2}{\log_k a_1}\cdot\frac{\log_k a_3}{\log_k a_2}\cdots\frac{\log_k a_n}{\log_k a_{n-1}}.$$</p>
+      </div>
+      <p>Pay ve paydalar ardışık olarak sadeleşir (teleskopik çarpım); geriye yalnızca</p>
+      <p>$$\frac{\log_k a_n}{\log_k a_1} = \log_{a_1} a_n$$</p>
+      <p>kalır.</p>
+      <p class="qed">$\blacksquare$</p>
+    </div>
+  </section>
+
+</main>
+<footer>
+  12. Sınıf Matematik · Logaritma İspatları
+</footer>
+</body>
+</html>
