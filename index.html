@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>12. Sınıf Matematik — İspatlar</title>
+<title>12. Sınıf Matematik — İspat</title>
 <script>
   window.MathJax = {
     tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
@@ -21,43 +21,45 @@
   }
   header {
     background:linear-gradient(135deg,#1f6feb,#1248b8); color:#fff;
-    padding:28px 20px 22px; text-align:center;
+    padding:24px 20px 20px; text-align:center;
   }
-  header h1 { margin:0 0 4px; font-size:1.35rem; font-weight:700; }
-  header p { margin:0; opacity:.9; font-size:.9rem; }
+  header h1 { margin:0 0 4px; font-size:1.2rem; font-weight:700; }
+  header p { margin:0; opacity:.9; font-size:.85rem; }
   main { max-width:760px; margin:0 auto; padding:18px 14px 60px; }
   .toc {
     background:var(--card); border:1px solid var(--line); border-radius:14px;
-    padding:14px 16px; margin-bottom:20px;
+    padding:16px 18px;
   }
-  .toc h2 { font-size:.95rem; margin:0 0 8px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
+  .toc h2 { font-size:.95rem; margin:0 0 6px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
+  .toc .hint { font-size:.9rem; color:var(--muted); margin:0 0 12px; }
   .toc ol { margin:0; padding-left:1.2em; }
-  .toc li { margin:5px 0; }
+  .toc li { margin:7px 0; }
   .toc a { color:var(--accent); text-decoration:none; }
   .card {
+    display:none;
     background:var(--card); border:1px solid var(--line); border-radius:14px;
-    padding:18px 18px 14px; margin-bottom:18px; scroll-margin-top:14px;
-    box-shadow:0 1px 3px rgba(20,30,50,.04);
+    padding:20px 18px 16px; box-shadow:0 1px 3px rgba(20,30,50,.04);
   }
   .card .no { display:inline-block; background:var(--accent); color:#fff; font-size:.78rem;
     font-weight:700; padding:2px 9px; border-radius:20px; margin-bottom:8px; }
-  .card h3 { margin:6px 0 12px; font-size:1.08rem; font-weight:700; line-height:1.4; }
+  .card h3 { margin:6px 0 14px; font-size:1.1rem; font-weight:700; line-height:1.4; }
   .proof { font-size:1rem; }
   .proof p { margin:.55em 0; }
   .qed { text-align:right; color:var(--muted); font-weight:700; }
-  footer { text-align:center; color:var(--muted); font-size:.82rem; padding:10px 20px 30px; }
   .overflow { overflow-x:auto; }
+  footer { text-align:center; color:var(--muted); font-size:.82rem; padding:10px 20px 30px; }
 </style>
 </head>
 <body>
 <header>
-  <h1>12. Sınıf Matematik — İspatlar</h1>
-  <p>Logaritma Özelliklerinin İspatları · QR ile erişim</p>
+  <h1>12. Sınıf Matematik</h1>
+  <p>Logaritma — İspat</p>
 </header>
 <main>
 
-  <nav class="toc">
+  <nav class="toc" id="anasayfa">
     <h2>İçindekiler</h2>
+    <p class="hint">Bir ispatı görmek için ilgili QR kodu okutun. Aşağıdan da seçebilirsiniz.</p>
     <ol>
       <li><a href="#ispat-1">$\log_a b = c \Leftrightarrow b = a^c$</a></li>
       <li><a href="#ispat-2">$\log_a 1 = 0$</a></li>
@@ -198,5 +200,24 @@
 <footer>
   12. Sınıf Matematik · Logaritma İspatları
 </footer>
+
+<script>
+  function gosterIspat() {
+    var hash = (window.location.hash || '').replace('#', '');
+    var nav = document.getElementById('anasayfa');
+    var kartlar = document.querySelectorAll('.card');
+    for (var i = 0; i < kartlar.length; i++) kartlar[i].style.display = 'none';
+    var hedef = hash ? document.getElementById(hash) : null;
+    if (hedef && hedef.classList.contains('card')) {
+      hedef.style.display = 'block';
+      nav.style.display = 'none';
+    } else {
+      nav.style.display = 'block';
+    }
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', gosterIspat);
+  gosterIspat();
+</script>
 </body>
 </html>
