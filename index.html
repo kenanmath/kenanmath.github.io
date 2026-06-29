@@ -48,7 +48,8 @@
   .qed { text-align:right; color:var(--muted); font-weight:700; }
   .overflow { overflow-x:auto; }
   mjx-container[display="true"] { overflow-x:auto; overflow-y:hidden; max-width:100%; padding:2px 0; }
-  .card h3 { overflow-x:auto; }
+  .card h3 { overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; padding-bottom:4px; }
+  .proof p { max-width:100%; }
   body { overflow-x:hidden; }
   footer { text-align:center; color:var(--muted); font-size:.82rem; padding:10px 20px 30px; }
   @media (max-width:480px) {
@@ -193,8 +194,9 @@
 
   <section class="card" id="ispat-10">
     <span class="no">İspat 10</span>
-    <h3>$\left(\log_{a_1} a_2\right)\left(\log_{a_2} a_3\right)\cdots\left(\log_{a_{n-1}} a_n\right) = \log_{a_1} a_n$</h3>
+    <h3>Zincir kuralı</h3>
     <div class="proof">
+      <div class="overflow"><p>$$\left(\log_{a_1} a_2\right)\left(\log_{a_2} a_3\right)\cdots\left(\log_{a_{n-1}} a_n\right) = \log_{a_1} a_n$$</p></div>
       <p>Her çarpanı ortak bir $k$ tabanına çevirelim (taban değiştirme): $\log_{a_i} a_{i+1} = \dfrac{\log_k a_{i+1}}{\log_k a_i}$. Çarpımı yazalım:</p>
       <div class="overflow">
       <p>$$\frac{\log_k a_2}{\log_k a_1}\cdot\frac{\log_k a_3}{\log_k a_2}\cdots\frac{\log_k a_n}{\log_k a_{n-1}}.$$</p>
